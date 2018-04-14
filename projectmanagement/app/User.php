@@ -33,4 +33,29 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    //user has many tasks
+    public function tasks()
+    {
+        return $this->hasMany('App\Models\Task');
+    }
+
+    //user has many comments
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+
+    //user belongs to a role
+    public function role()
+    {
+        return $this->belongsTo('App\Models\Role');
+    }
+
+    //user has many company
+    public function companies()
+    {
+        return $this->hasMany('App\Models\Company');
+    }
 }

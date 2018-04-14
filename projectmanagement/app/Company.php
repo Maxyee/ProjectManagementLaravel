@@ -11,4 +11,10 @@ class Company extends Model
         'description',
         'user_id'
     ];
+
+    // a company belongs to a user
+    public function user()
+    {
+        $this->belongsTo('App\Model\User');
+    }
 }
