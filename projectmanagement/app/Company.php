@@ -15,6 +15,6 @@ class Company extends Model
     // a company belongs to a user
     public function user()
     {
-        $this->belongsTo('App\Model\User');
+        $this->belongsTo('App\User');
     }
 }

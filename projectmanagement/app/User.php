@@ -36,26 +36,38 @@ class User extends Authenticatable
 
 
     //user has many tasks
-    public function tasks()
-    {
-        return $this->hasMany('App\Models\Task');
-    }
+//    public function tasks()
+//    {
+//        return $this->hasMany('App\Models\Task');
+//    }
 
     //user has many comments
     public function comments()
     {
-        return $this->hasMany('App\Models\Comment');
+        return $this->hasMany('App\Comment');
     }
 
     //user belongs to a role
     public function role()
     {
-        return $this->belongsTo('App\Models\Role');
+        return $this->belongsTo('App\Role');
     }
 
     //user has many company
     public function companies()
     {
-        return $this->hasMany('App\Models\Company');
+        return $this->hasMany('App\Company');
+    }
+
+    //a user belongs to many task
+    public function tasks()
+    {
+        return $this->belongsToMany('App\Task');
+    }
+
+    //a user belongs to many projects
+    public function projects()
+    {
+        return $this->belongsToMany('App\Project');
     }
 }
