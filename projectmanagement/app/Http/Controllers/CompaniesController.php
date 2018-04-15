@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Project;
 use Illuminate\Http\Request;
 
 class CompaniesController extends Controller
@@ -49,6 +50,14 @@ class CompaniesController extends Controller
     public function show(Company $company)
     {
         //
+
+        //$company = Company::where('id',$company->id )->first();
+
+        $company = Company::find($company->id);
+
+        //$projects = Project::
+
+        return view('companies.show', ['company' => $company]);
     }
 
     /**

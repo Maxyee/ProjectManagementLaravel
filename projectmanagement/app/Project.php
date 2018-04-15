@@ -14,7 +14,7 @@ class Project extends Model
         'days',
     ];
 
-
+    //protected $table = 'Project';
     //a project belongs to a user
 //    public function user()
 //    {
